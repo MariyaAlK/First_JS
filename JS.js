@@ -1,5 +1,20 @@
-a=2;
-b=2;
-c=a+b;
-console.log(c);
-console.log(1);
+console.log( 'Добро '+'пожаловать '+'на курс' + ', Мария!' );
+console.log('Номер месяца, в котором вы родились: ' + 6);
+// alert('11.01.2024');
+console.log('------------');
+console.log('Типы данных: ');
+let a = 15;
+console.log(typeof a, '- ' + a);
+console.log('String - ' + 'слово');
+console.log('Undefined - ', b);
+var b;
+console.log('NaN - ', 10/'c');
+const d = 9.8;
+console.log('Const - ' + d);
+console.log('Infinity - ', 1/0);
+let e = 5879859403984869030496n;
+console.log('Bigint - ' + e);
+console.log('Boolean - ', 10>8, ' или ', 7<1);
+let n = null;
+console.log('Null - ', n);
+document.getElementById('one').innerHTML = 'Hello World!'
