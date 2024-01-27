@@ -21,23 +21,42 @@
 // document.getElementById('one').innerHTML = 'Hello World!'
 // console.log('------------');
 
-console.log('Задание 3:');
-document.querySelector('#one').innerHTML = 'Введите число'
-let inp = document.querySelector('.text')
-let btn = document.querySelector('.check')
-let prnt = document.querySelector('.out')
-let n = 0
-btn.onclick = function(){
-    n += 1;
-    let e = +inp.value // let e = +inp.value - Плюс переводит в число
-    console.log(`Вы кликнули по кнопке ${n}-й раз`);
-    if(e>100){
-        prnt.innerHTML += `${e}<br>`
-    }
-    else{
-        console.log(e);
-    }
-    inp.value = ''
-}
+// console.log('Задание 3:');
+// document.querySelector('#one').innerHTML = 'Введите число'
+// let inp = document.querySelector('.text')
+// let btn = document.querySelector('.check')
+// let prnt = document.querySelector('.out')
+// let n = 0
+// btn.onclick = function(){
+//     n += 1;
+//     let e = +inp.value // let e = +inp.value - Плюс переводит в число
+//     console.log(`Вы кликнули по кнопке ${n}-й раз`);
+//     if(e>100){
+//         prnt.innerHTML += `${e}<br>`
+//     }
+//     else{
+//         console.log(e);
+//     }
+//     inp.value = ''
+// }
 
 // let myhappy = prompt('когда др') //Вызывает модальное окно для ввода
+
+console.log('Задание 4:');
+let a = prompt('Введи значение переменной a')
+let b = prompt('Введи значение переменной b')
+console.log('Значение а: ',a,'  Значение b: ',b);
+sum = (+a)+(+b)
+console.log('Сумма a+b>15?');
+// if (sum>15)  {
+//     console.log('Ответ: Да');
+// }
+// else{
+//     console.log('Ответ: Нет');
+// }
+let summa = sum>15 ? 'Ответ: Да':'Ответ: Нет'
+console.log(summa);
+console.log('Значение a = b?');
+// let rav = a==b ? true : false //Тернарный оператор
+// console.log(rav);
+console.log(a===b);
