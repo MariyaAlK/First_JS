@@ -88,52 +88,137 @@
 //     out.innerHTML += `${i}; `
 // }
 
-console.log('Задание 6:');
-console.log('Задача 1:');
-let a = 5;
-let b = prompt('Введи значение переменной b');
-console.log('Значение а = ', a);
-console.log('Значение b = ', b);
-console.log('Они равны?');
-switch(b){
-    case `${a}`: 
-        console.log('Да')
-        break
-    case null:
-    case '':
-        console.log('Не сработало')
-        break
-    default:
-        console.log('Нет')
+// console.log('Задание 6:');
+// console.log('Задача 1:');
+// let a = 5;
+// let b = prompt('Введи значение переменной b');
+// console.log('Значение а = ', a);
+// console.log('Значение b = ', b);
+// console.log('Они равны?');
+// switch(b){
+//     case `${a}`: 
+//         console.log('Да')
+//         break
+//     case null:
+//     case '':
+//         console.log('Не сработало')
+//         break
+//     default:
+//         console.log('Нет')
+// }
+
+// console.log('Задача 2:');
+// let c = prompt('Введи значение от 1 до 12');
+// console.log('Введенное число ', c);
+// console.log('Вариант решения 1:');
+// switch(+c){
+//     case 1:
+//     case 2:
+//     case 12: 
+//         console.log('Зима')
+//         break
+//     case 3:
+//     case 4:
+//     case 5:        
+//         console.log('Весна')
+//         break
+//     case 6:
+//     case 7:
+//     case 8:        
+//         console.log('Лето')
+//         break
+//     default:      
+//         console.log('Осень')
+// }
+// console.log('Вариант решения 2:');
+// let userNumber = parseInt(c);
+// switch (true) {
+//     case (userNumber >= 1 && userNumber < 3):
+//         console.log("Зима");
+//         break;
+//     case (userNumber >= 3 && userNumber < 6):
+//         console.log("Весна");
+//         break;
+//     case (userNumber >= 6 && userNumber < 9):
+//         console.log("Лето");
+//         break;
+//     case (userNumber >= 9 && userNumber <= 12):
+//         console.log("Осень");
+//         break;
+//     default:
+//         console.log("Не сработало");
+// }
+
+// console.log('Задача 3:');
+// let var1 = null
+// let var2 = 3
+// let var3 = 'Hello'
+// console.log(var1 + ', ' + var2 + ', ' + var3);
+// console.log('Проверка с помощью оператора нулевого слияния:');
+// console.log(var1 ?? var2 ?? var3);
+
+console.log('Задание 7:');
+alert('Введите значение переменной А в первое окно ввода и после этого нажмите кнопку рядом')
+let inp = document.querySelector('.text')
+let btn = document.querySelector('.check')
+let prnt = document.querySelector('.out')
+function showValue (){
+    prnt.innerHTML = inp.value
+    inp.value = ''
+}
+btn.onclick = showValue
+
+let inp2 = document.querySelector('.number')
+let btn2 = document.querySelector('.check2')
+let btn3 = document.querySelector('.check3')
+let btn4 = document.querySelector('.check4')
+let btn5 = document.querySelector('.check5')
+let btn6 = document.querySelector('.check6')
+let prnt2 = document.querySelector('.out2')
+
+
+function calcSum (){
+    let a = +inp2.value
+    inp2.value = ''
+    btn2.onclick = function (){
+        let b = +inp2.value
+        inp2.value = ''
+        return prnt2.innerHTML = (a+b);
+    }
 }
 
-console.log('Задача 2:');
-let c = prompt('Введи значение от 1 до 12');
-console.log('Введенное число ', c);
-switch(+c){
-    case 1:
-    case 2:
-    case 12: 
-        console.log('Зима')
-        break
-    case 3:
-    case 4:
-    case 5:        
-        console.log('Весна')
-        break
-    case 6:
-    case 7:
-    case 8:        
-        console.log('Лето')
-        break
-    default:      
-        console.log('Осень')
+function calcDif (){
+    let a = +inp2.value
+    inp2.value = ''
+    btn2.onclick = function (){
+        let b = +inp2.value
+        inp2.value = ''
+        return prnt2.innerHTML = (a-b);
+    }
 }
 
-console.log('Задача 3:');
-let var1 = null
-let var2 = 3
-let var3 = 'Hello'
-console.log(var1 + ', ' + var2 + ', ' + var3);
-console.log('Проверка с помощью оператора нулевого слияния:');
-console.log(var1 ?? var2 ?? var3);
+function calcMlt (){
+    let a = +inp2.value
+    inp2.value = ''
+    btn2.onclick = function (){
+        let b = +inp2.value
+        inp2.value = ''
+        return prnt2.innerHTML = (a*b);
+    }
+}
+
+function calcDiv (){
+    let a = +inp2.value
+    inp2.value = ''
+    btn2.onclick = function (){
+        let b = +inp2.value
+        inp2.value = ''
+        return prnt2.innerHTML = (a/b);
+    }
+}
+
+
+btn3.onclick = calcSum
+btn4.onclick = calcDif
+btn5.onclick = calcMlt
+btn6.onclick = calcDiv
