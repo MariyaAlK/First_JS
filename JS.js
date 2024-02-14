@@ -157,68 +157,140 @@
 // console.log('Проверка с помощью оператора нулевого слияния:');
 // console.log(var1 ?? var2 ?? var3);
 
-console.log('Задание 7:');
-alert('Введите значение переменной А в первое окно ввода и после этого нажмите кнопку рядом')
-let inp = document.querySelector('.text')
-let btn = document.querySelector('.check')
-let prnt = document.querySelector('.out')
-function showValue (){
-    prnt.innerHTML = inp.value
-    inp.value = ''
-}
-btn.onclick = showValue
+// console.log('Задание 7:');
+// alert('Введите значение переменной А в первое окно ввода и после этого нажмите кнопку рядом')
+// let inp = document.querySelector('.text')
+// let btn = document.querySelector('.check')
+// let prnt = document.querySelector('.out')
+// function showValue (){
+//     prnt.innerHTML = inp.value
+//     inp.value = ''
+// }
+// btn.onclick = showValue
 
-let inp2 = document.querySelector('.number')
-let btn2 = document.querySelector('.check2')
-let btn3 = document.querySelector('.check3')
-let btn4 = document.querySelector('.check4')
-let btn5 = document.querySelector('.check5')
-let btn6 = document.querySelector('.check6')
-let prnt2 = document.querySelector('.out2')
+// let inp2 = document.querySelector('.number')
+// let btn2 = document.querySelector('.check2')
+// let btn3 = document.querySelector('.check3')
+// let btn4 = document.querySelector('.check4')
+// let btn5 = document.querySelector('.check5')
+// let btn6 = document.querySelector('.check6')
+// let prnt2 = document.querySelector('.out2')
 
 
-function calcSum (){
-    let a = +inp2.value
-    inp2.value = ''
-    btn2.onclick = function (){
-        let b = +inp2.value
-        inp2.value = ''
-        return prnt2.innerHTML = (a+b);
+// function calcSum (){
+//     let a = +inp2.value
+//     inp2.value = ''
+//     btn2.onclick = function (){
+//         let b = +inp2.value
+//         inp2.value = ''
+//         return prnt2.innerHTML = (a+b);
+//     }
+// }
+
+// function calcDif (){
+//     let a = +inp2.value
+//     inp2.value = ''
+//     btn2.onclick = function (){
+//         let b = +inp2.value
+//         inp2.value = ''
+//         return prnt2.innerHTML = (a-b);
+//     }
+// }
+
+// function calcMlt (){
+//     let a = +inp2.value
+//     inp2.value = ''
+//     btn2.onclick = function (){
+//         let b = +inp2.value
+//         inp2.value = ''
+//         return prnt2.innerHTML = (a*b);
+//     }
+// }
+
+// function calcDiv (){
+//     let a = +inp2.value
+//     inp2.value = ''
+//     btn2.onclick = function (){
+//         let b = +inp2.value
+//         inp2.value = ''
+//         return prnt2.innerHTML = (a/b);
+//     }
+// }
+
+
+// btn3.onclick = calcSum
+// btn4.onclick = calcDif
+// btn5.onclick = calcMlt
+// btn6.onclick = calcDiv
+
+// console.log('Задание 8:');
+// Примеры из лекции
+// const one = document.querySelector('.one')
+
+// Пример 1
+// one.style.color = 'red'
+// one.style.marginBottom = '200px'
+// one.style.paddingLeft = '150px'
+// console.log(one.style);
+
+// Пример 2
+// Присвоить класс
+// one.classList.add('black')
+// Удалить класс
+// one.classList.remove('black')
+
+// Пример 3
+// const btn = document.querySelector('.btn')
+// btn.onclick = function(){
+//     this.classList.toggle('black')
+// }
+
+// Пример 4
+// const btn = document.querySelector('.btn')
+// const bodyy = document.querySelector('body')
+// btn.onclick = function(){
+//     bodyy.classList.toggle('black')
+//     this.classList.toggle('btnn')
+// }
+
+// Пример 5 Атрибуты
+// Обращение к атрибуту
+// const one = document.querySelector('.one')
+// console.log(one.getAttribute('data'));
+
+// Пример 6 Взаимодействие с атрибутами
+// let genre = document.querySelectorAll('.genre')
+
+// for(let i=0; i<genre.length; i++){
+//     genre[i].onclick = function(){
+//         let shop = document.querySelector('.inp').value
+//         let price = this.getAttribute('data')
+//         console.log(shop*price);
+//     }
+// }
+
+console.log('Задание 8:');
+// Задание 1
+const btn = document.querySelector('.btn')
+const div = document.querySelector('.element')
+
+btn.onclick = function(){
+        div.classList.toggle('WidHeigth')
     }
+
+// Задание 2
+const btn2 = document.querySelector('.btn2')
+const div2 = document.querySelector('.element2')
+
+btn2.onclick = function(){
+    div2.classList.toggle('color')
+    div2.classList.toggle('bordr')
+    div2.classList.toggle('backgrd')
 }
 
-function calcDif (){
-    let a = +inp2.value
-    inp2.value = ''
-    btn2.onclick = function (){
-        let b = +inp2.value
-        inp2.value = ''
-        return prnt2.innerHTML = (a-b);
-    }
+// Задание 3
+const btn3 = document.querySelector('.btn3')
+
+btn3.onclick = function(){
+    div2.classList.remove('bordr')
 }
-
-function calcMlt (){
-    let a = +inp2.value
-    inp2.value = ''
-    btn2.onclick = function (){
-        let b = +inp2.value
-        inp2.value = ''
-        return prnt2.innerHTML = (a*b);
-    }
-}
-
-function calcDiv (){
-    let a = +inp2.value
-    inp2.value = ''
-    btn2.onclick = function (){
-        let b = +inp2.value
-        inp2.value = ''
-        return prnt2.innerHTML = (a/b);
-    }
-}
-
-
-btn3.onclick = calcSum
-btn4.onclick = calcDif
-btn5.onclick = calcMlt
-btn6.onclick = calcDiv
