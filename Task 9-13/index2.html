@@ -4,9 +4,31 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        .container{
+            display: flex;
+            justify-content: space-around;
+        }
+        .one, .two{
+            height: 40px;
+            width: 300px;
+            border: 2px solid red;
+        }
+    </style>
+    <!-- <style>
+        .container{
+            display: flex;
+            justify-content: space-around;
+        }
+        .one, .two, .three{
+            width: 30px;
+            height: 30px;
+            border: 2px solid red; 
+        }
+    </style> -->
 </head>
 <body>
-    <div class="out"></div>
+    <!-- <div class="out"></div>
     <input class="text">
     <button class="btn">Нажимай</button>
     <div class="out2"></div>
@@ -14,7 +36,30 @@
     <button class="btn2">Кликай</button>
     <div class="out3"></div>
     <button class="btn3">Щелкай</button>
-    <div class="out4"></div>
+    <div class="out4"></div> -->
+    <!-- Задание 12 -->
+    <!-- События мыши примеры -->
+    <!-- <div class="container">
+        <div class="one"></div>
+        <div class="two"></div>
+    </div>
+    <div class="container">
+        <div class="three"></div>
+    </div> -->
+    <!-- События клавиатуры примеры -->
+    <!-- <input type="text" class="inp1"> -->
+    <!-- Само задание 12-->
+    <div class="container">
+        <div class="one">Этот блок увеличивается при нажатии</div>
+        <div class="two">Этот блок выводит в консоль свое содержимое при двойном нажатии</div>
+    </div>
+    <div class="container">
+        <img class="paint" src="images/1.jpg">
+    </div>
+    <div>Введите любые символы</div>
+    <input class="inp">
+    <div class="three"></div>
+
     <script src="JS2.js"></script>
 </body>
 </html>

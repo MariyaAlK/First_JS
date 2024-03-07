@@ -73,51 +73,145 @@
 //     })
 // }
 
-console.log('Задание 11:');
+// console.log('Задание 11:');
+// // Задание 1
+// let a = new Set('e')
+// a.add('r')
+// a.add('i')
+// a.add('k')
+// a.add('t')
+// a.add('h')
+// a.add('e')
+// a.add('b')
+// a.add('e')
+// a.add('s')
+// a.add('t')
+// console.log(a);
+// // Задание 2
+// let out = document.querySelector('.out')
+// let btn = document.querySelector('.btn')
+// let inp = document.querySelector('.text')
+// out.innerHTML = 'Добавление значения в Set'
+// btn.onclick = function() {
+//     a.add(inp.value)
+//     console.log(a)
+//     inp.value = ''
+// }
+// // Задание 3
+// let out2 = document.querySelector('.out2')
+// let out3 = document.querySelector('.out3')
+// let btn2 = document.querySelector('.btn2')
+// let inp2 = document.querySelector('.text2')
+// out2.innerHTML = 'Проверка значения в Set'
+// btn2.onclick = function() {
+//     out3.innerHTML = a.has(inp2.value)
+//     inp2.value = ''
+// }
+// // Задание 4
+// let out4 = document.querySelector('.out4')
+// let btn3 = document.querySelector('.btn3')
+// out3.innerHTML += `<br>`
+// let b = [14,2,456,3,2,6,78,56,1,0,9,5]
+// btn3.onclick = function(){
+//     let c =[]
+//     for(let i of b){
+//         if (i>5){
+//             c.push(i)
+//         }
+//     }
+//     out4.innerHTML = `Был массив b = [${b}]<br> Стал массив, где все значения больше 5, c = [${c}]`
+// }
+
+console.log('Задание 12:');
+// примеры из лекции
+// СОБЫТИЯ МЫШИ
+// пример 1. один клик мыши
+// document.querySelector('.one').onclick = function(event) {
+//     console.log(event);
+//     console.log('Это блок 1');
+// }
+// document.querySelector('.two').onclick = function() {
+//     console.log('Это блок 2');
+// }
+// пример 2. двойной клик мыши
+// document.querySelector('.two').ondblclick = function() {
+//     console.log('Это блок 2');
+// }
+// пример 3. событие срабатывает при нажатии правой кнопки мыши
+// document.querySelector('.two').oncontextmenu = function() {
+//     console.log('Это блок 2');
+//     return false // исчезает контекстное меню при нажатии правой кнопки мыши
+// }
+// // пример 4. событие срабатывает, когда мы двигаем мышью внутри нашего блока
+// document.querySelector('.three').onmousemove = function(){
+//     console.log('Ты внутри 3 блока');
+// }
+// пример 5
+// let width = 100
+// document.querySelector('.three').onmousemove = function(){
+//     document.querySelector('.three').style.width = width+'px'
+//     width++
+//     console.log('Ты внутри 3 блока');
+// }
+// пример 6 событие срабатывает при наведении и событие срабатывает при выходе из блока
+// document.querySelector('.three').onmouseenter = function(){
+//     document.querySelector('.three').style.background = 'pink'
+// }
+// document.querySelector('.three').onmouseleave = function(){
+//     document.querySelector('.three').style.background = '#fff'
+// }
+// // срабатывает по нажатию
+// document.querySelector('.three').onmousedown = function(){
+//     document.querySelector('.three').style.background = 'red'
+// }
+// // срабатывает когда мы отпустили кнопку мыши
+// document.querySelector('.three').onmouseup = function(){
+//     document.querySelector('.three').style.background = 'green'
+// }
+//СОБЫТИЯ КЛАВИАТУРЫ
+// пример 1. событие изменения инпута
+// document.querySelector('.inp1').oninput = function(e){
+//     console.log(e);
+// }
+// пример 2. при нажатии любой клавиши происходит событие
+// document.querySelector('.inp1').onkeypress = function(e){
+//     console.log(e);
+//     console.log(e.charCode);
+// }
+// пример 3 срабатывает, когда клавиша нажата
+// document.querySelector('.inp1').onkeydown = function(e){
+//     console.log(e);
+// }
+// пример 4 срабатывает, когда отпускаешь клавишу
+// document.querySelector('.inp1').onkeyup = function(e){
+//     console.log(e);
+// }
+
 // Задание 1
-let a = new Set('e')
-a.add('r')
-a.add('i')
-a.add('k')
-a.add('t')
-a.add('h')
-a.add('e')
-a.add('b')
-a.add('e')
-a.add('s')
-a.add('t')
-console.log(a);
+let width = 300
+let height = 40
+document.querySelector('.one').onclick = function(){
+    width +=15
+    height +=15
+    document.querySelector('.one').style.width = `${width}px`
+    document.querySelector('.one').style.height = `${height}px`
+}
 // Задание 2
-let out = document.querySelector('.out')
-let btn = document.querySelector('.btn')
-let inp = document.querySelector('.text')
-out.innerHTML = 'Добавление значения в Set'
-btn.onclick = function() {
-    a.add(inp.value)
-    console.log(a)
-    inp.value = ''
+document.querySelector('.two').ondblclick = function(){
+    console.log(document.querySelector('.two').innerHTML);
 }
 // Задание 3
-let out2 = document.querySelector('.out2')
-let out3 = document.querySelector('.out3')
-let btn2 = document.querySelector('.btn2')
-let inp2 = document.querySelector('.text2')
-out2.innerHTML = 'Проверка значения в Set'
-btn2.onclick = function() {
-    out3.innerHTML = a.has(inp2.value)
-    inp2.value = ''
+document.querySelector('.paint').onclick = function(){
+    document.querySelector('.paint').src = 'images/2.jpg' 
 }
-// Задание 4
-let out4 = document.querySelector('.out4')
-let btn3 = document.querySelector('.btn3')
-out3.innerHTML += `<br>`
-let b = [14,2,456,3,2,6,78,56,1,0,9,5]
-btn3.onclick = function(){
-    let c =[]
-    for(let i of b){
-        if (i>5){
-            c.push(i)
-        }
+// Задание 4, 5
+let out = document.querySelector('.three')
+let inp = document.querySelector('.inp')
+inp.onkeyup = function(e){
+    out.innerHTML = `keyCode ${inp.value}: ${e.keyCode}`
+    if ((+inp.value >= 0) & (inp.value != '')) {
+        out.innerHTML += `<br>${false}`
     }
-    out4.innerHTML = `Был массив b = [${b}]<br> Стал массив, где все значения больше 5, c = [${c}]`
+    inp.value = ''
 }
+
