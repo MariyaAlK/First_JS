@@ -122,7 +122,7 @@
 //     out4.innerHTML = `Был массив b = [${b}]<br> Стал массив, где все значения больше 5, c = [${c}]`
 // }
 
-console.log('Задание 12:');
+// console.log('Задание 12:');
 // примеры из лекции
 // СОБЫТИЯ МЫШИ
 // пример 1. один клик мыши
@@ -187,31 +187,84 @@ console.log('Задание 12:');
 //     console.log(e);
 // }
 
-// Задание 1
-let width = 300
-let height = 40
-document.querySelector('.one').onclick = function(){
-    width +=15
-    height +=15
-    document.querySelector('.one').style.width = `${width}px`
-    document.querySelector('.one').style.height = `${height}px`
-}
-// Задание 2
-document.querySelector('.two').ondblclick = function(){
-    console.log(document.querySelector('.two').innerHTML);
-}
-// Задание 3
-document.querySelector('.paint').onclick = function(){
-    document.querySelector('.paint').src = 'images/2.jpg' 
-}
-// Задание 4, 5
-let out = document.querySelector('.three')
-let inp = document.querySelector('.inp')
-inp.onkeyup = function(e){
-    out.innerHTML = `keyCode ${inp.value}: ${e.keyCode}`
-    if ((+inp.value >= 0) & (inp.value != '')) {
-        out.innerHTML += `<br>${false}`
+// // Задание 1
+// // let width = 300
+// // let height = 40
+// // document.querySelector('.one').onclick = function(){
+// //     width +=15
+// //     height +=15
+// //     document.querySelector('.one').style.width = `${width}px`
+// //     document.querySelector('.one').style.height = `${height}px`
+// // }
+
+// // Получаем элемент, чтобы измерить его начальные стили
+// let element = document.querySelector('.one');
+// // Получаем стили, примененные к элементу
+// let computedStyle = getComputedStyle(element);
+// // Извлекаем необходимые значения
+// let width = parseInt(computedStyle.width, 10); // parseInt преобразует строковое значение в число и удаляет 'px'
+// let height = parseInt(computedStyle.height, 10);
+// document.querySelector('.one').onclick = function(){
+//     width += 15;
+//     height += 15;
+//     this.style.width = `${width}px`;
+//     this.style.height = `${height}px`;
+// }
+
+// // Задание 2
+// document.querySelector('.two').ondblclick = function(){
+//     console.log(document.querySelector('.two').innerHTML);
+// }
+// // Задание 3
+// document.querySelector('.paint').onclick = function(){
+//     document.querySelector('.paint').src = 'images/2.jpg' 
+// }
+// // Задание 4, 5
+// let out = document.querySelector('.three')
+// let inp = document.querySelector('.inp')
+// inp.onkeyup = function(e){
+//     out.innerHTML = `keyCode ${inp.value}: ${e.keyCode}`
+//     if ((+inp.value >= 0) & (inp.value != '')) {
+//         out.innerHTML += `<br>${false}`
+//     }
+//     inp.value = ''
+// }
+
+console.log('Задание 13:');
+console.log('Пример 1');
+// пример 1
+localStorage.setItem('data',5)
+console.log(localStorage.getItem('data'));
+
+// пример 2
+console.log('Пример 2');
+let c=[1,2,3]
+localStorage.setItem('Dataa',c) //записывает не как массив, а набор каких то данных
+let d = localStorage.getItem('Dataa')
+console.log(d[1]);
+console.log(typeof d);
+
+//пример 3
+console.log('Пример 3');
+let a=[1,2,3]
+localStorage.setItem('Data', JSON.stringify(a)) //записывает как массив
+let b = localStorage.getItem('Data') // у b тип данных стринг
+b = JSON.parse(b) // делает b типом как у а, теперь b имеет тип обджект
+console.log(b[1]);
+console.log(typeof b);
+
+//пример 4. Работа с запросом
+console.log('Пример 4');
+let xttp = new XMLHttpRequest();
+xttp.onreadystatechange = function(){
+    if(this.readyState == 4 && this.status == 200){
+        myfunc(this.responseText)
     }
-    inp.value = ''
 }
 
+xttp.open('GET','https://automarine25.ru/',true)
+xttp.send()
+
+function myfunc(data){
+    console.log(data);
+}
