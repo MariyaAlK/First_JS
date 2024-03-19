@@ -230,41 +230,122 @@
 //     inp.value = ''
 // }
 
-console.log('Задание 13:');
-console.log('Пример 1');
+// console.log('Задание 13:');
+// console.log('Пример 1');
+// // пример 1
+// localStorage.setItem('data',5)
+// console.log(localStorage.getItem('data'));
+
+// // пример 2
+// console.log('Пример 2');
+// let c=[1,2,3]
+// localStorage.setItem('Dataa',c) //записывает не как массив, а набор каких то данных
+// let d = localStorage.getItem('Dataa')
+// console.log(d[1]);
+// console.log(typeof d);
+
+// //пример 3
+// console.log('Пример 3');
+// let a=[1,2,3]
+// localStorage.setItem('Data', JSON.stringify(a)) //записывает как массив
+// let b = localStorage.getItem('Data') // у b тип данных стринг
+// b = JSON.parse(b) // делает b типом как у а, теперь b имеет тип обджект
+// console.log(b[1]);
+// console.log(typeof b);
+
+// //пример 4. Работа с запросом
+// console.log('Пример 4');
+// let xttp = new XMLHttpRequest();
+// xttp.onreadystatechange = function(){
+//     if(this.readyState == 4 && this.status == 200){
+//         myfunc(this.responseText)
+//     }
+// }
+
+// xttp.open('GET','https://automarine25.ru/',true)
+// xttp.send()
+
+// function myfunc(data){
+//     console.log(data);
+// }
+
+console.log('Задание 14:');
 // пример 1
-localStorage.setItem('data',5)
-console.log(localStorage.getItem('data'));
+// let xttp = new XMLHttpRequest()
+// xttp.onreadystatechange = function(){
+//     if(this.readyState == 4 && this.status == 200){
+//         myfunc(this.responseText)
+//     }
+// }
+
+// xttp.open('GET','https://automarine25.ru/')
+// xttp.send()
+
+// function myfunc(data){
+//     console.log(data);
+// }
 
 // пример 2
-console.log('Пример 2');
-let c=[1,2,3]
-localStorage.setItem('Dataa',c) //записывает не как массив, а набор каких то данных
-let d = localStorage.getItem('Dataa')
-console.log(d[1]);
-console.log(typeof d);
+// fetch('https://automarine25.ru/')
+// .then(data=>{
+//     console.log(data);
+// })
 
-//пример 3
-console.log('Пример 3');
-let a=[1,2,3]
-localStorage.setItem('Data', JSON.stringify(a)) //записывает как массив
-let b = localStorage.getItem('Data') // у b тип данных стринг
-b = JSON.parse(b) // делает b типом как у а, теперь b имеет тип обджект
-console.log(b[1]);
-console.log(typeof b);
+// пример 3
+// fetch('http://127.0.0.1:5500/index2.html')
+// .then(data=>{
+//     console.log(data);
+// })
 
-//пример 4. Работа с запросом
-console.log('Пример 4');
-let xttp = new XMLHttpRequest();
-xttp.onreadystatechange = function(){
-    if(this.readyState == 4 && this.status == 200){
-        myfunc(this.responseText)
-    }
-}
+// пример 4
+// fetch('http://127.0.0.1:5500/index2.html')
+// .then(data=>{
+//     console.log(data);
+//     data.text().then(data2 =>{
+//         console.log(data2);
+//     })
+// })
 
-xttp.open('GET','https://automarine25.ru/',true)
-xttp.send()
+// пример 5
+// fetch('https://automarine25.ru/')
+// .then(data=>{
+//     console.log(data);
+//     data.text().then(data2 =>{
+//         console.log(data2);
+//     })
+// })
 
-function myfunc(data){
+// пример 6. то же самое, что и в примерах 4,5, только длиннее запись
+// fetch('http://127.0.0.1:5500/index2.html')
+// .then(data=>{
+//     console.log(data);
+//     return data.text()
+// })
+// .then(data=>{
+//     console.log(data);
+// })
+
+// пример 7. то же самое, что и в примерах 4,5,6, только другая запись
+// fetch('http://127.0.0.1:5500/index2.html')
+// .then(data=>data.text())
+// .then(data=>{
+//     console.log(data);
+// })
+
+// пример 8. переписываем примеры выше через промиз
+let a = new Promise((resolve, reject) =>{ //resolve в случае удачной обработки промиз, а reject в случае неудачной
+    fetch('http://127.0.0.1:5500/index2.html')
+    .then(data =>{
+        resolve(data.text())
+    })
+})
+
+a.then(data =>{
     console.log(data);
-}
+})
+// resolve когда мы получили результат как задумали
+// reject когда сервер вернул запрос не так как необходимо
+// Для того, чтобы урегулировать порядок вывода промизов, используем следующее:
+// Promise.all([b,a]).then(data=>{
+//     console.log(data);
+// }) //Выведи все промизы, сначала b, потом а
